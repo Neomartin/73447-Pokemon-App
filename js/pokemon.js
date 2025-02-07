@@ -15,21 +15,16 @@ function obtenerPokemones() {
 
                                    })
                                    .catch(error => {
-
                                         console.error(error);
                                         console.error("Error al obtener los pokemones");
-
                                    })
-
 }
 
 obtenerPokemones();
 
-
-
 function pintarPokemones(arrayPokemones) {
     // 1. Seleccionar el contenedor de los pokemones
-    const pokemonListHTML = document.getElementById("pokemon-list");
+    const pokemonListHTML = document.getElementById("poke");
 
     // 2. Borrar el contenido del contenedor
 
@@ -40,8 +35,31 @@ function pintarPokemones(arrayPokemones) {
     arrayPokemones.forEach(pokemon => {
         // 4. Crear un elemento HTML por cada pokemon
 
+        const ID = extraerPokemonID(pokemon.url);
+        
+        pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                                        ${pokemon.name}
+                                        
+                                        <a href="/pages/detail.html?pokemon=${ID}" 
+                                            class="btn btn-primary btn-sm">
+                                                Ver
+                                        </a>
+                                    </li>`
     })
 }
+
+
+function extraerPokemonID(url) {
+    // // const url = pokemon.url;
+
+    // const urlSplit = url.split("/"); // ["https:", "", "pokeapi.co", "api", "v2", "pokemon", "1", ""]
+
+    // const pokemonID = urlSplit.at(-2); // "1"
+    const pokemonID = url.split("/").at(-2);
+
+    return pokemonID;
+}
+
 
 
 
