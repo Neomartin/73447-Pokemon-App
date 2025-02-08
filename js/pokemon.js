@@ -45,6 +45,18 @@ function pintarPokemones(arrayPokemones) {
                                                 Ver
                                         </a>
                                     </li>`
+
+        // const listItem = document.createElement("li");
+
+        // listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+
+        // listItem.innerText = pokemon.name;
+
+        // console.dir(listItem)
+
+        // pokemonListHTML.appendChild(listItem);
+
+
     })
 }
 
