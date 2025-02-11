@@ -37,24 +37,47 @@ function pintarPokemones(arrayPokemones) {
 
         const ID = extraerPokemonID(pokemon.url);
         
-        pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ${pokemon.name}
+        // pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+        //                                 ${pokemon.name}
                                         
-                                        <a href="/pages/detail.html?pokemon=${ID}" 
-                                            class="btn btn-primary btn-sm">
-                                                Ver
-                                        </a>
-                                    </li>`
+        //                                 <a href="/pages/detail.html?pokemon=${ID}" 
+        //                                     class="btn btn-primary btn-sm">
+        //                                         Ver
+        //                                 </a>
+        //                             </li>`
 
-        // const listItem = document.createElement("li");
+        const listItem = document.createElement("li");
 
-        // listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+        listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
 
-        // listItem.innerText = pokemon.name;
+        listItem.innerText = pokemon.name;
 
-        // console.dir(listItem)
+        const aHTML =  document.createElement("a"); //  <a></a>
 
-        // pokemonListHTML.appendChild(listItem);
+
+        aHTML.classList.add("btn", "btn-primary", "btn-sm"); //  <a class="btn btn-primary btn-sm"></a>
+
+        aHTML.innerText = "Ver"; //  <a class="btn btn-primary btn-sm">Ver</a>
+
+        aHTML.href = `/pages/detail.html?pokemon=${ID}`;
+
+        // !Importante se puede setear el atributo href de la siguiente manera y se puede user para setear cualquier atributo
+        // aHTML.setAttribute("href", `/pages/detail.html?pokemon=${ID}`);
+
+        aHTML.style.backgroundColor = "red";
+
+        aHTML.style.color = "white";
+
+        aHTML.style.borderBottomStyle = "solid";
+
+        // css: background-color
+        listItem.appendChild(aHTML);
+
+        console.dir(aHTML)
+
+        console.dir(listItem)
+
+        pokemonListHTML.appendChild(listItem);
 
 
     })
