@@ -5,7 +5,7 @@ function obtenerPokemones() {
     // 1. Hacer una petición al servidor con un método asíncrono con axios
     axios.get(`${URL_API}/pokemon`).then(response => {
 
-                                    console.log("Respuesta desde pokemonapi", response);
+                                    // console.log("Respuesta desde pokemonapi", response);
 
                                     // 2. Guardar la respuesta en la variable pokemones
                                     pokemones = response.data.results;
@@ -29,7 +29,7 @@ function pintarPokemones(arrayPokemones) {
     // 2. Borrar el contenido del contenedor
 
 
-    console.log("pintarpokemos", arrayPokemones);
+    // console.log("pintarpokemos", arrayPokemones);
     
     // 3. Recorrer el array de pokemones con un forEach
     arrayPokemones.forEach(pokemon => {
@@ -73,9 +73,9 @@ function pintarPokemones(arrayPokemones) {
         // css: background-color
         listItem.appendChild(aHTML);
 
-        console.dir(aHTML)
+        // console.dir(aHTML)
 
-        console.dir(listItem)
+        // console.dir(listItem)
 
         pokemonListHTML.appendChild(listItem);
 
